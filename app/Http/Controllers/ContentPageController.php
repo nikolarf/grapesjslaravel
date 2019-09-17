@@ -10,6 +10,7 @@ class ContentPageController extends Controller
     public function addContent($contentPage, $prefix, $request)
     {
         $contentPage->id= $prefix;
+        $contentPage->user_id= auth()->id();
         $contentPage->assets= $request->input('gjs-assets');
         $contentPage->css= $request->input('gjs-css');
         $contentPage->styles= $request->input('gjs-styles');
@@ -45,6 +46,7 @@ class ContentPageController extends Controller
         }
         $labels = ['assets', 'css', 'styles', 'html', 'components', ];
         $json = [
+            'id' => request('id'),
             'gjs-assets' =>  $contentPage->getAttribute('assets'),
             'gjs-css' =>  $contentPage->getAttribute('css'),
             'gjs-styles' =>  $contentPage->getAttribute('styles'),
@@ -54,5 +56,6 @@ class ContentPageController extends Controller
 
         header('Content-Type: application/json');
         return json_encode($json);
+         
     }
 }

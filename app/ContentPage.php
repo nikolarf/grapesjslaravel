@@ -9,7 +9,10 @@ class ContentPage extends Model
 {
     protected $table = 'content_pages';
 
-    protected $fillable = [
-       'gjsid', 'assets','css','styles','html','components'
-  ];
+    protected $guarded = [];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

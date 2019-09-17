@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title>GrapesJS</title>
 
-  <link rel="stylesheet" href="./grapesjs/dist/css/grapes.min.css">
-    <script src="./grapesjs/dist/grapes.js"></script>
+  <link rel="stylesheet" href="{{ asset('grapesjs/dist/css/grapes.min.css') }}">
+
+    <script src="{{ asset('grapesjs/dist/grapes.js') }}"></script>
 
     <!-- RESOURCE -->
     <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
@@ -14,18 +15,18 @@
     <script src="https://static.filestackapi.com/v3/filestack-0.1.10.js"></script>
 
     <!-- PLUGINS -->
-    <script src="./grapesjs-blocks-bootstrap4/dist/grapesjs-blocks-bootstrap4.min.js"></script>
-    <script src="./grapesjs-blocks-basic/dist/grapesjs-blocks-basic.min.js"></script>
-    <script src="./grapesjs-aviary/dist/grapesjs-aviary.min.js"></script>
-    <script src="./grapesjs-blocks-flexbox/dist/grapesjs-blocks-flexbox.min.js"></script>
-    <script src="./grapesjs-lory-slider/dist/grapesjs-lory-slider.min.js"></script>
-    <script src="./grapesjs-blocks-basic/dist/grapesjs-blocks-basic.min.js"></script>
-    <script src="./grapesjs-tabs/dist/grapesjs-tabs.min.js"></script>
-    <script src="./grapesjs-navbar/dist/grapesjs-navbar.min.js"></script>
-    <script src="./grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.js"></script>
-    <script src="./toastr/toastr.js"></script>
-    <link rel="stylesheet" href="./grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.css">
-    <link rel="stylesheet" href="./toastr/build/toastr.min.css">
+    <script src="{{ asset('grapesjs-blocks-bootstrap4/dist/grapesjs-blocks-bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('grapesjs-blocks-basic/dist/grapesjs-blocks-basic.min.js') }}"></script>
+    <script src="{{ asset('grapesjs-aviary/dist/grapesjs-aviary.min.js') }}"></script>
+    <script src="{{ asset('grapesjs-blocks-flexbox/dist/grapesjs-blocks-flexbox.min.js') }}"></script>
+    <script src="{{ asset('grapesjs-lory-slider/dist/grapesjs-lory-slider.min.js') }}"></script>
+    <script src="{{ asset('grapesjs-blocks-basic/dist/grapesjs-blocks-basic.min.js') }}"></script>
+    <script src="{{ asset('grapesjs-tabs/dist/grapesjs-tabs.min.js') }}"></script>
+    <script src="{{ asset('grapesjs-navbar/dist/grapesjs-navbar.min.js') }}"></script>
+    <script src="{{ asset('grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.js') }}"></script>
+    <script src="{{ asset('toastr/toastr.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('toastr/build/toastr.min.css') }}">
 
 
 
@@ -43,7 +44,7 @@
   </head>
 
   <body>
-    <div id="gjs">
+    <div id="gjs-{{ $site_id }}">
 
     </div>
     <script type="text/javascript">
@@ -672,7 +673,7 @@
 
 
         // Move Ad
-        $('#gjs').append($('.ad-cont'));
+        $('#'+prefix).append($('.ad-cont'));
         });
 
         var storageManager = editor.StorageManager;

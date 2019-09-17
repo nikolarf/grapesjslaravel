@@ -78,16 +78,6 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
         ],
-        'postgres' => [
-            'driver'   => 'pgsql',
-            'host'     => $db['host'],
-            'database' => substr($db["path"], 1),
-            'username' => $db['user'],
-            'password' => isset($db['pass']) ? $db['pass'] : '',
-            'charset'  => 'utf8',
-            'prefix'   => '',
-            'schema'   => 'public',
-        ],
 
     ],
 

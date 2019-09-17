@@ -11,9 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index-simple');
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/', function ($site_id = '3') {
+    return view('index')->with('site_id', $site_id);
 });
+
+//Route::get('/{user}/{id}', 'TestController@show');
+//Route::get('/showsite/{user}/{site_id}', 'TestController@showsite')->name('showsite');
+Route::get('/s/{username}/{site_id}', 'TestController@showsite')->name('showsite');
+
 
 Route::post('/content/store/{id}', 'ContentPageController@store')->name('content.store');
 Route::get('/content/load/{id}', 'ContentPageController@load')->name('content.load');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

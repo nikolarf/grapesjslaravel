@@ -15,6 +15,7 @@ class ContentPage extends Migration
     {
         Schema::create('content_pages', function (Blueprint $table) {
             $table->string('id');
+            $table->unsignedInteger('user_id')->nullable();
             $table->text('assets')->nullable();
             $table->text('css')->nullable();
             $table->text('styles')->nullable();
