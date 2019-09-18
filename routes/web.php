@@ -15,13 +15,17 @@
 //     return view('index');
 // });
 
-Route::get('/', function ($site_id = '3') {
-    return view('index')->with('site_id', $site_id);
+// Route::get('/', function ($site_id = '3') {
+//     return view('index')->with('site_id', $site_id);
+// });
+Route::get('/', function () {
+    return view('auth.login');
 });
 
 //Route::get('/{user}/{id}', 'TestController@show');
 //Route::get('/showsite/{user}/{site_id}', 'TestController@showsite')->name('showsite');
 Route::get('/s/{username}/{site_id}', 'TestController@showsite')->name('showsite');
+Route::get('/deletesite/{site_id}', 'TestController@deletesite')->name('deletesite');
 
 
 Route::post('/content/store/{id}', 'ContentPageController@store')->name('content.store');

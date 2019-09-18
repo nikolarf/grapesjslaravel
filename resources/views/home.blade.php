@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                
+                <div class="card-header">Dashboard <a class="float-right" href="{{ url('s/'.$username.'/gjs-'.$next_site_id) }}">New Site</a></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,25 +15,31 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Hello, {{$username}}
                 </div>
                 <div class="card-body">
                     <div class="container">
-                      <div class="row">
+                      <div class="row mb-2">
                          <div class="col-sm">
-                           User ID
+                           User Name
                          </div>
                          <div class="col-sm">
                            Site ID
                          </div>
+                         <div class="col-sm">
+                            
+                         </div>
                       </div>
                       @foreach($contentpages as $contentpage)
                           <div class="row">
-                            <div class="col-sm">
+                            <div class="col-sm mb-2">
                               {{$username}}
                             </div>
-                            <div class="col-sm">
+                            <div class="col-sm mb-2">
                               <a href="{{ url('s/'.$username.'/'.$contentpage->id) }}">{{$contentpage->id}}</a>
+                            </div>
+                            <div class="col-sm mb-2">
+                              <a class="btn btn-danger btn-sm" href="{{ url('/deletesite/'.$contentpage->id) }}">delete</a>
                             </div>
                           </div>
                       @endforeach
