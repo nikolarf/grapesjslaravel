@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\ContentPage;
 use Auth;
+use File;
 
 class HomeController extends Controller
 {
@@ -17,6 +18,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
     }
 
     /**
@@ -29,6 +31,12 @@ class HomeController extends Controller
 
         $uid = auth()->id();
         $username = Auth::user()->name;
+
+        $user_dir = public_path() . '/' . $username;
+
+        if (!file_exists($user_dir)){
+            File::makeDirectory($user_dir);
+        }
 
         //dd($username);
 

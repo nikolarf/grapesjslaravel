@@ -11,7 +11,7 @@
     <!-- RESOURCE -->
     <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
     <script src="https://unpkg.com/grapesjs"></script>
-    <script src="//feather.aviary.com/imaging/v3/editor.js"></script>
+    {{-- <script src="//feather.aviary.com/imaging/v3/editor.js"></script> --}}
     <script src="https://static.filestackapi.com/v3/filestack-0.1.10.js"></script>
 
     <!-- PLUGINS -->
@@ -24,6 +24,7 @@
     <script src="{{ asset('grapesjs-tabs/dist/grapesjs-tabs.min.js') }}"></script>
     <script src="{{ asset('grapesjs-navbar/dist/grapesjs-navbar.min.js') }}"></script>
     <script src="{{ asset('grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.js') }}"></script>
+    <script src="{{ asset('grapesjs-plugin-export/dist/grapesjs-plugin-export.min.js') }}"></script>
     <script src="{{ asset('toastr/toastr.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('grapesjs-preset-webpage/dist/grapesjs-preset-webpage.min.css') }}">
     <link rel="stylesheet" href="{{ asset('toastr/build/toastr.min.css') }}">
@@ -143,6 +144,9 @@
               }
           },
           'gjs-preset-webpage': {},
+          //'grapesjs-plugin-export': { 
+
+          //},
 
           aviaryOpts: {
               key: '1'
@@ -778,6 +782,7 @@
         }
         });
 
+        //editor.runCommand('gjs-export-zip');
         //Configure asset Manager
 
 window.editor = editor;
