@@ -36,7 +36,10 @@
                               {{$username}}
                             </div>
                             <div class="col-sm mb-2">
-                              <a href="{{ url('s/'.$username.'/'.$contentpage->id) }}">{{$contentpage->id}}</a>
+                              <a class="btn btn-secondary btn-sm" href="{{ url('edit/'.$username.'/'.$contentpage->id) }}">{{$contentpage->id}} EDIT</a>
+                            </div>
+                            <div class="col-sm mb-2">
+                              <a class="btn btn-primary btn-sm" href="{{ url('show/'.$username.'/'.$contentpage->id) }}">show</a>
                             </div>
                             <div class="col-sm mb-2">
                               <a class="btn btn-danger btn-sm" href="{{ url('/deletesite/'.$contentpage->id) }}">delete</a>

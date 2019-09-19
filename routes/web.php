@@ -24,8 +24,10 @@ Route::get('/', function () {
 
 //Route::get('/{user}/{id}', 'TestController@show');
 //Route::get('/showsite/{user}/{site_id}', 'TestController@showsite')->name('showsite');
-Route::get('/s/{username}/{site_id}', 'TestController@showsite')->name('showsite');
-Route::get('/deletesite/{site_id}', 'TestController@deletesite')->name('deletesite');
+Route::get('/edit/{username}/{site_id}', 'TestController@showsiteedit')->name('show_site_edit');
+Route::get('/s/{username}/{next_site_id}', 'TestController@newsite')->name('new_site');
+Route::get('/show/{username}/{site_id}', 'TestController@showsite')->name('show_site');
+Route::get('/deletesite/{site_id}', 'TestController@deletesite')->name('delete_site');
 
 
 Route::post('/content/store/{id}', 'ContentPageController@store')->name('content.store');
